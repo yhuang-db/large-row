@@ -4,3 +4,5 @@ pandas
 numpy
 polars
 duckdb
+pyspark
+pyspark[sql]
