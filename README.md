@@ -88,6 +88,7 @@ python python benchmark.py -t 1_cols_1_mb
 
 ##### Spark session config
 
+    Pyspark Default:
     spark.master: local[*]
     Executor Reqs:
         cores: [amount: 1]
