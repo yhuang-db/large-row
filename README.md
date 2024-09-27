@@ -88,6 +88,14 @@ python python benchmark.py -t 1_cols_1_mb
 
 ##### Spark session config
 
+    spark.master: local[*]
+    Executor Reqs:
+        cores: [amount: 1]
+	    memory: [amount: 1024]
+	    offHeap: [amount: 0]
+    Task Reqs:
+        cpus: [amount: 1.0]
+
 ##### Survival test
 
 | Test file       |     Read file      |         Q1         |         Q2         |         Q3         |         Q4         |         Q5         |  ...  |
@@ -99,7 +107,7 @@ python python benchmark.py -t 1_cols_1_mb
 | 10_cols_1_kb    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |  ...  |
 | 10_cols_1_mb    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |  ...  |
 | 10_cols_10_mb   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |  ...  |
-| 10_cols_100_mb  | :white_check_mark: |                    |                    |                    |                    |                    |  ...  |
+| 10_cols_100_mb  | :white_check_mark: |        :x:         |                    |                    |                    |                    |  ...  |
 | 100_cols_1_kb   |                    |                    |                    |                    |                    |                    |  ...  |
 | 100_cols_1_mb   |                    |                    |                    |                    |                    |                    |  ...  |
 | 100_cols_10_mb  |                    |                    |                    |                    |                    |                    |  ...  |
