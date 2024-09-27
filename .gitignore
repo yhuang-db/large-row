@@ -163,5 +163,6 @@ cython_debug/
 
 /data/*_cols_*_mb.csv
 /data/*_cols_*_mb.parquet
-!/data/1_cols_*_mb.parquet
+!/data/1_cols_1_mb.parquet
+!/data/1_cols_10_mb.parquet
 !/data/10_cols_1_mb.parquet

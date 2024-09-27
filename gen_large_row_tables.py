@@ -46,14 +46,16 @@ if __name__ == "__main__":
     # gen kb cell tables
     for col_num in [1, 10, 100]:
         df = gen_kb_cell_df(col_num, 1)
-        # df.to_csv(f"data/{col_num}_cols_1_kb.csv", index=False)
+        df.to_csv(f"data/{col_num}_cols_1_kb.csv", index=False)
         df.to_parquet(f"data/{col_num}_cols_1_kb.parquet", index=False)
         print(f"Generated {col_num}_cols_1_kb")
 
     # gen mb cell tables
     for col_num in [1, 10, 100]:
-        for mb in [1, 10]:
+        for mb in [1, 10, 100]:
+            if col_num == 100 and mb == 100:
+                continue
             df = gen_mb_cell_df(col_num, mb)
-            # df.to_csv(f"data/{col_num}_cols_{mb}_mb.csv", index=False)
+            df.to_csv(f"data/{col_num}_cols_{mb}_mb.csv", index=False)
             df.to_parquet(f"data/{col_num}_cols_{mb}_mb.parquet", index=False)
             print(f"Generated {col_num}_cols_{mb}_mb")
