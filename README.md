@@ -85,19 +85,19 @@ spark.sql("select get_second_max(col_0) from t").collect()
 
 ##### Survival test
 
-| Test file       | Read file          | Q1                 | Q2                 | Q3                            | Q4                 | Q5                 | ... |
-| --------------- | ------------------ | ------------------ | ------------------ | ----------------------------- | ------------------ | ------------------ | --- |
-| 1_cols_1_kb     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:            | :white_check_mark: | :white_check_mark: | ... |
-| 1_cols_1_mb     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:            | :white_check_mark: | :white_check_mark: | ... |
-| 1_cols_10_mb    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:            | :white_check_mark: | :white_check_mark: | ... |
-| 1_cols_100_mb   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :negative_squared_cross_mark: |                    |                    | ... |
-| 10_cols_1_kb    |                    |                    |                    |                               |                    |                    | ... |
-| 10_cols_1_mb    |                    |                    |                    |                               |                    |                    | ... |
-| 10_cols_10_mb   |                    |                    |                    |                               |                    |                    | ... |
-| 10_cols_100_mb  |                    |                    |                    |                               |                    |                    | ... |
-| 100_cols_1_kb   |                    |                    |                    |                               |                    |                    | ... |
-| 100_cols_1_mb   |                    |                    |                    |                               |                    |                    | ... |
-| 100_cols_10_mb  |                    |                    |                    |                               |                    |                    | ... |
-| 100_cols_100_mb |                    |                    |                    |                               |                    |                    | ... |
+| Test file       | Read file          | Q1                 | Q2                 | Q3                 | Q4                 | Q5                 | ... |
+| --------------- | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | --- |
+| 1_cols_1_kb     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | ... |
+| 1_cols_1_mb     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | ... |
+| 1_cols_10_mb    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | ... |
+| 1_cols_100_mb   | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |                    |                    | ... |
+| 10_cols_1_kb    |                    |                    |                    |                    |                    |                    | ... |
+| 10_cols_1_mb    |                    |                    |                    |                    |                    |                    | ... |
+| 10_cols_10_mb   |                    |                    |                    |                    |                    |                    | ... |
+| 10_cols_100_mb  |                    |                    |                    |                    |                    |                    | ... |
+| 100_cols_1_kb   |                    |                    |                    |                    |                    |                    | ... |
+| 100_cols_1_mb   |                    |                    |                    |                    |                    |                    | ... |
+| 100_cols_10_mb  |                    |                    |                    |                    |                    |                    | ... |
+| 100_cols_100_mb |                    |                    |                    |                    |                    |                    | ... |
 
 ##### Performance test
