@@ -6,46 +6,52 @@ def get_random_char_from(string):
     return random.choice(string)
 
 
-def gen_large_cell(char_seeds, mb):
+def gen_kb_string(char_seeds, kb):
+    char = get_random_char_from(char_seeds)
+    return char * 1024 * kb
+
+
+def gen_mb_string(char_seeds, mb):
     char = get_random_char_from(char_seeds)
     return char * 1024 * 1024 * mb
 
 
+def gen_random_double():
+    return random.random()
+
+
+def gen_kb_double_array(kb):
+    return [gen_random_double() for _ in range(int(1024 * kb / 8))]
+
+
+def gen_mb_double_array(mb):
+    return [gen_random_double() for _ in range(int(1024 * 1024 * mb / 8))]
+
+
+def gen_kb_cell_df(col_num, kb):
+    df = pd.DataFrame(
+        {"uid": [1], "name": ["Alice"], **{f"col_{i}": [gen_kb_double_array(kb)] for i in range(col_num)}}
+    )
+    return df
+
+
+def gen_mb_cell_df(col_num, mb):
+    df = pd.DataFrame(
+        {"uid": [1], "name": ["Alice"], **{f"col_{i}": [gen_mb_double_array(mb)] for i in range(col_num)}}
+    )
+    return df
+
+
 if __name__ == "__main__":
-    char_seeds = "abc"
+    # gen kb cell tables
+    for col_num in [1, 10, 100]:
+        df = gen_kb_cell_df(col_num, 1)
+        df.to_csv(f"data/{col_num}_cols_1_kb.csv", index=False)
+        print(f"Generated {col_num}_cols_1_kb.csv")
 
-    # create df with 200 1MB col
-    df_sm = pd.DataFrame(
-        {
-            "uid": [1, 2, 3],
-            "name": ["Alice", "Bob", "Charlie"],
-            **{f"col_{i}_1m": [gen_large_cell(char_seeds, 1) for _ in range(3)] for i in range(200)},
-        }
-    )
-    df_sm.to_csv("data/data_sm_col.csv", index=False)
-    df_sm.to_parquet("data/data_sm_col.parquet", index=False)
-    print("Done small col.")
-
-    # create df with 20 10MB col
-    df_md = pd.DataFrame(
-        {
-            "uid": [1, 2, 3],
-            "name": ["Alice", "Bob", "Charlie"],
-            **{f"col_{i}_10m": [gen_large_cell(char_seeds, 10) for _ in range(3)] for i in range(20)},
-        }
-    )
-    df_md.to_csv("data/data_md_col.csv", index=False)
-    df_md.to_parquet("data/data_md_col.parquet", index=False)
-    print("Done medium col.")
-
-    # create df with 2 100MB col
-    df_lg = pd.DataFrame(
-        {
-            "uid": [1, 2, 3],
-            "name": ["Alice", "Bob", "Charlie"],
-            **{f"col_{i}_100m": [gen_large_cell(char_seeds, 100) for _ in range(3)] for i in range(2)},
-        }
-    )
-    df_lg.to_csv("data/data_lg_col.csv", index=False)
-    df_lg.to_parquet("data/data_lg_col.parquet", index=False)
-    print("Done large col.")
+    # gen mb cell tables
+    for col_num in [1, 10, 100]:
+        for mb in [1, 10]:
+            df = gen_mb_cell_df(col_num, mb)
+            df.to_csv(f"data/{col_num}_cols_{mb}_mb.csv", index=False)
+            print(f"Generated {col_num}_cols_{mb}_mb.csv")
