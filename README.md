@@ -81,6 +81,11 @@ spark.sql("select get_second_max(col_0) from t").collect()
 
 ## Test result
 
+```bash
+// example to run a test
+python python benchmark.py -t 1_cols_1_mb
+```
+
 ##### Spark session config
 
 ##### Survival test
