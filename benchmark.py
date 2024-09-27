@@ -32,7 +32,7 @@ def test_3():
 
 
 def test_4():
-    df.select("total", F.aggregate("col_0", F.lit(0.0), lambda acc, x: acc + x)).collect()
+    df.select(F.aggregate("col_0", F.lit(0.0), lambda acc, x: acc + x).alias("total")).collect()
 
 
 def test_5():
