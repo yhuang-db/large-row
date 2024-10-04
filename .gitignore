@@ -161,8 +161,4 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-/data/*_cols_*_mb.csv
-/data/*_cols_*_mb.parquet
-!/data/1_cols_1_mb.parquet
-!/data/1_cols_10_mb.parquet
-!/data/10_cols_1_mb.parquet
+data/openai
