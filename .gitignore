@@ -165,3 +165,4 @@ data/openai/*.jsonl
 data/openai/parquet/
 !data/openai/webtext.test.jsonl
 data/dummy
+!data/openai/parquet/1_cols_1_kb.parquet
