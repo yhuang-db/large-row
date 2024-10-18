@@ -8,7 +8,8 @@ def extend_text_to_length(text, length):
 
 
 df = pd.read_json("data/openai/webtext.test.jsonl", lines=True)
-df = df.head(10)
+n_row = 5
+df = df.head(n_row)
 
 df["1m_string"] = df["text"].apply(extend_text_to_length, length=1024 * 1024)
 
@@ -23,6 +24,12 @@ df["80m_string"] = df["1m_string"] * 80
 df["90m_string"] = df["1m_string"] * 90
 df["100m_string"] = df["1m_string"] * 100
 
-print("check")
+
+# n_col = 40
+# for i in range(1, n_col + 1):
+#     df[f"10m_string_{i}"] = df["1m_string"] * 10
+
+
+print("create data")
 df = df.drop(columns=["ended", "length", "text"])
-df.to_parquet("large_string_10row.parquet", index=False)
+df.to_parquet("large_string_5row.parquet", index=False)
