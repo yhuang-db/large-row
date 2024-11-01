@@ -4,7 +4,7 @@
 ### Test data
 Raw data: https://github.com/openai/gpt-2-output-dataset
 
-generating script: ```generate_string_table.py```
+Generating script: ```generate_string_table.py```
 
 ```sh
 # generate test parquet file with 100 rows, 10 columns, where each cell is a 10 MB string
@@ -36,10 +36,11 @@ df_upper.write.parquet("output.parquet")
 spark.stop()
 ```
 
-Test spark-submit commend line:
+Test spark-submit commend line: according to https://github.com/dongjoon-hyun/spark/blob/master/.github/workflows/benchmark.yml
 ```sh
 ../bin/spark-submit --driver-memory 6g udf_upper.py
 ```
+---
 
 |                  | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
 | ---------------- | ------------------ | ------------------ | ------------------ | ------------------ |
@@ -47,3 +48,19 @@ Test spark-submit commend line:
 | 100row_10col_5m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | 100row_10col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
 | 100row_10col_20m | :x:                | :x:                | :white_check_mark: | :x:                |
+| 100row_10col_30m | :x:                | :x:                | :x:                | :x:                |
+
+|                 | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
+| --------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| 50row_1col_10m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 60row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
+| 70row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
+| 80row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 90row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 100row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 125row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 150row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 175row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 200row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 250row_1col_10m | :x:                | :x:                | :x:                | :x:                |
+| 300row_1col_10m | :x:                | :x:                | :x:                | :x:                |
