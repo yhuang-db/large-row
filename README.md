@@ -41,9 +41,9 @@ Test spark-submit commend line:
 ../bin/spark-submit --driver-memory 6g udf_upper.py
 ```
 
-|                  | builtin_upper | udf_upper | builtin_length | udf_length |
-| ---------------- | ------------- | --------- | -------------- | ---------- |
-| 100row_10col_1m  | pass          | pass      | pass           | pass       |
-| 100row_10col_5m  | pass          | pass      | pass           | pass       |
-| 100row_10col_10m | pass          | fail      | pass           | fail       |
-| 100row_10col_20m | fail          | fail      | pass           | fail       |
+|                  | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
+| ---------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| 100row_10col_1m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 100row_10col_5m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 100row_10col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
+| 100row_10col_20m | :x:                | :x:                | :white_check_mark: | :x:                |
