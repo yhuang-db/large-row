@@ -1,7 +1,7 @@
 # large-row
 
 
-### Test data
+### Test Data
 Raw data: https://github.com/openai/gpt-2-output-dataset
 
 Generating script: ```generate_string_table.py```
@@ -19,7 +19,7 @@ Generated data: ```large_string_100row_10col_10m.parquet```
 | ...                                                    | ...                                           | ...                                                      | ... |
 
 
-### Test queries
+### Test Jobs
 Test pyspark file: ```udf_upper.py```
 
 ```Python
@@ -40,7 +40,8 @@ Test spark-submit commend line: according to https://github.com/dongjoon-hyun/sp
 ```sh
 ../bin/spark-submit --driver-memory 6g udf_upper.py
 ```
----
+
+### Test Result
 
 |                  | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
 | ---------------- | ------------------ | ------------------ | ------------------ | ------------------ |
