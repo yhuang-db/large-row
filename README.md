@@ -7,7 +7,7 @@ Raw data: https://github.com/openai/gpt-2-output-dataset
 generating script: ```generate_string_table.py```
 
 ```sh
-# generate test parquet file with 100 rows, 10 columns, each cell of 10 MB
+# generate test parquet file with 100 rows, 10 columns, where each cell is a 10 MB string
 python generate_string_table.py -r 100 -c 10 -s 10
 ```
 Generated data: ```large_string_100row_10col_10m.parquet```
@@ -19,3 +19,31 @@ Generated data: ```large_string_100row_10col_10m.parquet```
 | ...                                                    | ...                                           | ...                                                      | ... |
 
 
+### Test queries
+Test pyspark file: ```udf_upper.py```
+
+```Python
+spark = SparkSession.builder.appName("benchmark").getOrCreate()
+
+def udf_upper(text):
+    return text.upper()
+spark.udf.register("udf_upper", udf_upper)
+
+df = spark.read.parquet("large_string_100row_10col_10m.parquet")
+df.createOrReplaceTempView("T")
+df_upper = spark.sql("SELECT udf_upper(string_1) FROM T")
+df_upper.write.parquet("output.parquet")
+spark.stop()
+```
+
+Test spark-submit commend line:
+```sh
+../bin/spark-submit --driver-memory 6g udf_upper.py
+```
+
+|                  | builtin_upper | udf_upper | builtin_length | udf_length |
+| ---------------- | ------------- | --------- | -------------- | ---------- |
+| 100row_10col_1m  | pass          | pass      | pass           | pass       |
+| 100row_10col_5m  | pass          | pass      | pass           | pass       |
+| 100row_10col_10m | pass          | fail      | pass           | fail       |
+| 100row_10col_20m | fail          | fail      | pass           | fail       |
