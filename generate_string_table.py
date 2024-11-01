@@ -26,7 +26,7 @@ if __name__ == "__main__":
     df[f"{size}m_string"] = df["text"].apply(extend_text_to_length, length=string_length)
     df = df.drop(columns=["id", "ended", "length", "text"])
     reshaped = df.values.reshape(n_row, n_col)
-    df = pd.DataFrame(reshaped, columns=[f"string_{i+1}" for i in range(n_col)])
+    df = pd.DataFrame(reshaped, columns=[f"string_{i}" for i in range(n_col)])
 
     print("Created data")
     df.to_parquet(f"large_string_{n_row}row_{n_col}col_{size}m.parquet", index=False)
