@@ -56,11 +56,14 @@ Test spark-submit commend line: according to https://github.com/dongjoon-hyun/sp
 | 60row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
 | 70row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
 | 80row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 90row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
 | 100row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 125row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 150row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 175row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
 | 200row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
 | 250row_1col_10m | :x:                | :x:                | :x:                | :x:                |
 | 300row_1col_10m | :x:                | :x:                | :x:                | :x:                |
+
+|                 | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
+| --------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| 1row_1col_100m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 1row_1col_250m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| 1row_1col_500m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
+| 1row_1col_1000m | :x:                | :x:                | :white_check_mark: | :x:                |
