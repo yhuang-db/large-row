@@ -1,0 +1,2169 @@
+24/11/22 11:06:12 ERROR Utils: Aborting task
+java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+24/11/22 11:06:12 WARN InternalParquetRecordWriter: Too much memory used: Store {
+ [string_0] optional binary string_0 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_1] optional binary string_1 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_10] optional binary string_10 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,529,184 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,529,184/10,529,184
+ }
+ [string_11] optional binary string_11 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_12] optional binary string_12 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,498,560 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,498,560/10,498,560
+ }
+ [string_13] optional binary string_13 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,488,555 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,488,555/10,488,555
+ }
+ [string_14] optional binary string_14 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_15] optional binary string_15 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,507,644 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,507,644/10,507,644
+ }
+ [string_16] optional binary string_16 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_17] optional binary string_17 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_18] optional binary string_18 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_19] optional binary string_19 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,494,674 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,494,674/10,494,674
+ }
+ [string_2] optional binary string_2 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_20] optional binary string_20 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,489,185 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,489,185/10,489,185
+ }
+ [string_21] optional binary string_21 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,508,496 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,508,496/10,508,496
+ }
+ [string_22] optional binary string_22 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,503,174 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,503,174/10,503,174
+ }
+ [string_23] optional binary string_23 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_24] optional binary string_24 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,541,390 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,541,390/10,541,390
+ }
+ [string_25] optional binary string_25 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,500,642 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,500,642/10,500,642
+ }
+ [string_26] optional binary string_26 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,513,624 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,513,624/10,513,624
+ }
+ [string_27] optional binary string_27 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_28] optional binary string_28 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,493,702 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,493,702/10,493,702
+ }
+ [string_29] optional binary string_29 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_3] optional binary string_3 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_30] optional binary string_30 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_31] optional binary string_31 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_32] optional binary string_32 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_33] optional binary string_33 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,574,502 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,574,502/10,574,502
+ }
+ [string_34] optional binary string_34 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,499,906 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,499,906/10,499,906
+ }
+ [string_35] optional binary string_35 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_36] optional binary string_36 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,511,326 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,511,326/10,511,326
+ }
+ [string_37] optional binary string_37 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_38] optional binary string_38 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_39] optional binary string_39 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_4] optional binary string_4 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_40] optional binary string_40 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,490,378 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,490,378/10,490,378
+ }
+ [string_41] optional binary string_41 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_42] optional binary string_42 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,493,506 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,493,506/10,493,506
+ }
+ [string_43] optional binary string_43 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_44] optional binary string_44 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_45] optional binary string_45 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_46] optional binary string_46 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,634,978 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,634,978/10,634,978
+ }
+ [string_47] optional binary string_47 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,499,474 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,499,474/10,499,474
+ }
+ [string_48] optional binary string_48 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_49] optional binary string_49 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_5] optional binary string_5 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_50] optional binary string_50 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,540,236 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,540,236/10,540,236
+ }
+ [string_51] optional binary string_51 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,490,412 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,490,412/10,490,412
+ }
+ [string_52] optional binary string_52 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,538,369 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,538,369/10,538,369
+ }
+ [string_53] optional binary string_53 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_54] optional binary string_54 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,536,017 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,536,017/10,536,017
+ }
+ [string_55] optional binary string_55 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,521,976 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,521,976/10,521,976
+ }
+ [string_56] optional binary string_56 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_57] optional binary string_57 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_58] optional binary string_58 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_59] optional binary string_59 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_6] optional binary string_6 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,509,488 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,509,488/10,509,488
+ }
+ [string_60] optional binary string_60 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,491,032 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,491,032/10,491,032
+ }
+ [string_61] optional binary string_61 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,495,032 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,495,032/10,495,032
+ }
+ [string_62] optional binary string_62 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_63] optional binary string_63 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_64] optional binary string_64 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,521,189 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,521,189/10,521,189
+ }
+ [string_65] optional binary string_65 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,638,107 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,638,107/10,638,107
+ }
+ [string_66] optional binary string_66 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/0
+ }
+ [string_67] optional binary string_67 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_68] optional binary string_68 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_69] optional binary string_69 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_7] optional binary string_7 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_70] optional binary string_70 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_71] optional binary string_71 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_72] optional binary string_72 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_73] optional binary string_73 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_74] optional binary string_74 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_75] optional binary string_75 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_76] optional binary string_76 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_77] optional binary string_77 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_78] optional binary string_78 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_79] optional binary string_79 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_8] optional binary string_8 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 11,288,800 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 11,288,800/11,288,800
+ }
+ [string_80] optional binary string_80 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_81] optional binary string_81 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_82] optional binary string_82 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_83] optional binary string_83 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_84] optional binary string_84 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_85] optional binary string_85 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_86] optional binary string_86 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_87] optional binary string_87 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_88] optional binary string_88 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_89] optional binary string_89 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_9] optional binary string_9 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 2 slabs, 10,485,764 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 10,485,764/10,485,764
+ }
+ [string_90] optional binary string_90 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_91] optional binary string_91 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_92] optional binary string_92 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_93] optional binary string_93 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_94] optional binary string_94 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_95] optional binary string_95 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_96] optional binary string_96 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_97] optional binary string_97 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_98] optional binary string_98 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+ [string_99] optional binary string_99 (STRING) {
+  r:0 bytes
+  d:0 bytes
+   data: FallbackValuesWriter{
+   data: initial: DictionaryValuesWriter{
+   data: initial: dict:0
+   data: initial: values:0
+   data: initial:}
+
+   data: fallback: PLAIN CapacityByteArrayOutputStream 0 slabs, 0 bytes
+   data:}
+
+   pages: ColumnChunkPageWriter ConcatenatingByteArrayCollector 0 slabs, 0 bytes
+   total: 0/0
+ }
+}
+
+24/11/22 11:06:12 ERROR FileFormatWriter: Job job_202411221105441373606986594511788_0004 aborted.
+24/11/22 11:06:12 ERROR Executor: Exception in task 0.0 in stage 4.0 (TID 3)
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+24/11/22 11:06:12 ERROR SparkUncaughtExceptionHandler: Uncaught exception in thread Thread[#97,Executor task launch worker for task 0.0 in stage 4.0 (TID 3),5,main]
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+24/11/22 11:06:12 INFO SparkContext: Invoking stop() from shutdown hook
+24/11/22 11:06:12 INFO SparkContext: SparkContext is stopping with exitCode 0.
+24/11/22 11:06:12 WARN TaskSetManager: Lost task 0.0 in stage 4.0 (TID 3) (cs-u-spatial-513.cs.umn.edu executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+24/11/22 11:06:12 ERROR TaskSetManager: Task 0 in stage 4.0 failed 1 times; aborting job
+24/11/22 11:06:12 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+24/11/22 11:06:12 INFO TaskSchedulerImpl: Cancelling stage 4
+24/11/22 11:06:12 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage cancelled: Job aborted due to stage failure: Task 0 in stage 4.0 failed 1 times, most recent failure: Lost task 0.0 in stage 4.0 (TID 3) (cs-u-spatial-513.cs.umn.edu executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+Driver stacktrace:
+24/11/22 11:06:12 INFO DAGScheduler: ResultStage 4 (parquet at BuiltinUpper.scala:29) failed in 28.117 s due to Job aborted due to stage failure: Task 0 in stage 4.0 failed 1 times, most recent failure: Lost task 0.0 in stage 4.0 (TID 3) (cs-u-spatial-513.cs.umn.edu executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+Driver stacktrace:
+24/11/22 11:06:12 INFO DAGScheduler: Job 3 failed: parquet at BuiltinUpper.scala:29, took 28.126148 s
+24/11/22 11:06:12 ERROR FileFormatWriter: Aborting job a2452041-661a-4d4a-9947-0493a823ff81.
+org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 4.0 failed 1 times, most recent failure: Lost task 0.0 in stage 4.0 (TID 3) (cs-u-spatial-513.cs.umn.edu executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:437)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$4(FileFormatWriter.scala:307)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:802)
+	at BuiltinUpper$.main(BuiltinUpper.scala:29)
+	at BuiltinUpper.main(BuiltinUpper.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1029)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+24/11/22 11:06:12 INFO SparkUI: Stopped Spark web UI at http://cs-u-spatial-513.cs.umn.edu:4040
+Exception in thread "main" org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 4.0 failed 1 times, most recent failure: Lost task 0.0 in stage 4.0 (TID 3) (cs-u-spatial-513.cs.umn.edu executor driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2856)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2792)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2791)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2791)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1247)
+	at scala.Option.foreach(Option.scala:437)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1247)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3060)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2983)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:989)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$4(FileFormatWriter.scala:307)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:802)
+	at BuiltinUpper$.main(BuiltinUpper.scala:29)
+	at BuiltinUpper.main(BuiltinUpper.scala)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:1029)
+	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/home/huan1531/lr-spark/data/output/blt_upper.parquet.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.parquet.io.api.Binary.fromConstantByteArray(Binary.java:386)
+	at org.apache.parquet.io.api.Binary.copy(Binary.java:111)
+	at org.apache.parquet.column.values.dictionary.DictionaryValuesWriter$PlainBinaryDictionaryValuesWriter.writeBytes(DictionaryValuesWriter.java:250)
+	at org.apache.parquet.column.values.fallback.FallbackValuesWriter.writeBytes(FallbackValuesWriter.java:172)
+	at org.apache.parquet.column.impl.ColumnWriterBase.write(ColumnWriterBase.java:241)
+	at org.apache.parquet.io.MessageColumnIO$MessageColumnIORecordConsumer.addBinary(MessageColumnIO.java:476)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9(ParquetWriteSupport.scala:205)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$makeWriter$9$adapted(ParquetWriteSupport.scala:203)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68d9a880.apply(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$writeFields$1(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0c60.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeField(ParquetWriteSupport.scala:483)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.writeFields(ParquetWriteSupport.scala:161)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.$anonfun$write$1(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport$$Lambda/0x0000727f68ca0798.apply$mcV$sp(Unknown Source)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.consumeMessage(ParquetWriteSupport.scala:471)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:151)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetWriteSupport.write(ParquetWriteSupport.scala:53)
+	at org.apache.parquet.hadoop.InternalParquetRecordWriter.write(InternalParquetRecordWriter.java:138)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:181)
+	at org.apache.parquet.hadoop.ParquetRecordWriter.write(ParquetRecordWriter.java:43)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetOutputWriter.write(ParquetOutputWriter.scala:39)
+	at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.write(FileFormatDataWriter.scala:175)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithMetrics(FileFormatDataWriter.scala:85)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:92)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$$$Lambda/0x0000727f68de6880.apply(Unknown Source)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec$$Lambda/0x0000727f68d86860.apply(Unknown Source)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+24/11/22 11:06:12 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/11/22 11:06:12 INFO MemoryStore: MemoryStore cleared
+24/11/22 11:06:12 INFO BlockManager: BlockManager stopped
+24/11/22 11:06:12 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/11/22 11:06:12 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/11/22 11:06:12 INFO SparkContext: Successfully stopped SparkContext
+24/11/22 11:06:12 INFO ShutdownHookManager: Shutdown hook called
+24/11/22 11:06:12 INFO ShutdownHookManager: Deleting directory /tmp/spark-90e3c20b-ca14-4d71-94ff-dfe36d8ff281
+24/11/22 11:06:12 INFO ShutdownHookManager: Deleting directory /tmp/spark-d3fb8b1b-73cb-4386-9df3-d928e4bcd317

@@ -19,7 +19,14 @@
 # python generate_string_table.py -r 250 -c 1 -s 10
 # python generate_string_table.py -r 300 -c 1 -s 10
 
-python generate_string_table.py -r 1 -c 1 -s 100
-python generate_string_table.py -r 1 -c 1 -s 250
-python generate_string_table.py -r 1 -c 1 -s 500
-python generate_string_table.py -r 1 -c 1 -s 1000
+# python generate_string_table.py -r 1 -c 1 -s 100
+# python generate_string_table.py -r 1 -c 1 -s 250
+# python generate_string_table.py -r 1 -c 1 -s 500
+# python generate_string_table.py -r 1 -c 1 -s 1000
+
+# python generate_string_table.py -r 50 -c 1 -s 10
+# python generate_string_table.py -r 200 -c 1 -s 10
+# python generate_string_table.py -r 250 -c 1 -s 10
+
+# python generate_string_table.py -r 1 -c 50 -s 10
+# python generate_string_table.py -r 1 -c 100 -s 10

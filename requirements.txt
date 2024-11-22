@@ -2,7 +2,7 @@ jupyter
 pyarrow
 pandas
 numpy
-polars
-duckdb
-pyspark
-pyspark[sql]
+# polars
+# duckdb
+# pyspark
+# pyspark[sql]

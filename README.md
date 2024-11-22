@@ -68,3 +68,32 @@ Test spark-submit commend line: according to https://github.com/dongjoon-hyun/sp
 | 1row_1col_250m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | 1row_1col_500m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
 | 1row_1col_1000m | :x:                | :x:                | :white_check_mark: | :x:                |
+
+---
+
+# 1122
+
+|                 | builtin_upper      | udf_upper          | builtin_length | udf_length |
+| --------------- | ------------------ | ------------------ | -------------- | ---------- |
+| 1row_1col_500m  | :white_check_mark: | :white_check_mark: |                |            |
+| 1row_1col_1000m | :x:                | :x:                |                |            |
+
+
+|                 | builtin_upper      | udf_upper          | builtin_length | udf_length |
+| --------------- | ------------------ | ------------------ | -------------- | ---------- |
+| 200row_1col_10m | :white_check_mark: | :white_check_mark: |                |            |
+| 250row_1col_10m | :x:                | :x:                |                |            |
+
+##### Apply function on all columns
+
+|                  | builtin_upper      | udf_upper          | builtin_length | udf_length |
+| ---------------- | ------------------ | ------------------ | -------------- | ---------- |
+| 100row_10col_1m  | :white_check_mark: | :white_check_mark: |                |            |
+| 100row_10col_5m  | :x:                | :x:                |                |            |
+| 100row_10col_10m | :x:                | :x:                |                |            |
+
+
+|                 | builtin_upper      | udf_upper | builtin_length | udf_length |
+| --------------- | ------------------ | --------- | -------------- | ---------- |
+| 1row_50col_10m  | :white_check_mark: | :x:       |                |            |
+| 1row_100col_10m | :x:                | :x:       |                |            |

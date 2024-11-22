@@ -8,7 +8,7 @@ dataset = parser.parse_args().d
 
 ct = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 
-spark = SparkSession.builder.appName("LargeRowBenchmark-UDFUpper").getOrCreate()
+spark = SparkSession.builder.master("local[1]").appName("LargeRowBenchmark-UDFUpper").getOrCreate()
 
 
 # UDF
@@ -18,7 +18,7 @@ def udf_upper(text):
 
 spark.udf.register("udf_upper", udf_upper)
 
-df = spark.read.parquet(f"{dataset}.parquet")
+df = spark.read.parquet(f"/home/huan1531/large-row/{dataset}.parquet")
 df.createOrReplaceTempView("T")
 df.printSchema()
 print("n_row:", df.count(), "n_col:", len(df.columns))
