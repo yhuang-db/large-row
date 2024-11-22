@@ -20,7 +20,7 @@ Generated data: ```large_string_100row_10col_10m.parquet```
 
 
 ### Test Jobs
-Test pyspark file: ```scala/src/main/scala/BuiltinUpper.scala```
+Test scala file: ```scala/src/main/scala/BuiltinUpper.scala```
 
 ```Scala
 import org.apache.spark.sql.SparkSession
@@ -58,7 +58,7 @@ spark-3.5.3-bin-hadoop3-scala2.13/bin/spark-submit \
 
 ---
 
-# Result
+### Result
 
 |                  | builtin_upper      | udf_upper          | builtin_length | udf_length |
 | ---------------- | ------------------ | ------------------ | -------------- | ---------- |
