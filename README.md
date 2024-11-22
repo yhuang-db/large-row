@@ -20,27 +20,32 @@ Generated data: ```large_string_100row_10col_10m.parquet```
 
 
 ### Test Jobs
-Test scala file: ```scala/src/main/scala/BuiltinUpper.scala```
+Test scala file: ```scala/src/main/scala/UDFUpper.scala```
 
 ```Scala
 import org.apache.spark.sql.SparkSession
 
 object BuiltinUpper {
+  def udf_upper(text: String): String = {
+    return text.toUpperCase()
+  }
+
   def main(args: Array[String]): Unit = {
     // dataset
     val file = s"data/${dataset}.parquet"
     
     // read parquet file
-    val spark = SparkSession.builder.appName("Builtin-Upper").getOrCreate()
+    val spark = SparkSession.builder.appName("UDF-Upper").getOrCreate()
+    spark.udf.register("udf_upper", udf_upper(_: String): String)
     val df = spark.read.parquet(file)
     df.createOrReplaceTempView("T")
     df.printSchema()
     
     // run sql and write to parquet
-    val sql_projection = df.columns.map(c => s"UPPER(${c}) as ${c}").mkString(", ")
+    val sql_projection = df.columns.map(c => s"udf_upper(${c}) as ${c}").mkString(", ")
     val sql = s"SELECT ${sql_projection} FROM T"
     val df_out = spark.sql(sql)
-    df_out.write.mode("overwrite").parquet("output/blt_upper.parquet")
+    df_out.write.mode("overwrite").parquet("output/udf_upper.parquet")
     spark.stop()
   }
 }
