@@ -67,16 +67,16 @@ spark-3.5.3-bin-hadoop3-scala2.13/bin/spark-submit \
 | 100row_10col_10m | :x:                | :x:                |                |            |
 
 
-|                 | builtin_upper      | udf_upper          | builtin_length | udf_length |
-| --------------- | ------------------ | ------------------ | -------------- | ---------- |
-| 1row_1col_500m  | :white_check_mark: | :white_check_mark: |                |            |
-| 1row_1col_1000m | :x:                | :x:                |                |            |
+|                 | builtin_upper      | udf_upper                              | builtin_length | udf_length |
+| --------------- | ------------------ | -------------------------------------- | -------------- | ---------- |
+| 1row_1col_500m  | :white_check_mark: | :white_check_mark: (failed w/ pyspark) |                |            |
+| 1row_1col_1000m | :x:                | :x:                                    |                |            |
 
 
-|                 | builtin_upper      | udf_upper          | builtin_length | udf_length |
-| --------------- | ------------------ | ------------------ | -------------- | ---------- |
-| 200row_1col_10m | :white_check_mark: | :white_check_mark: |                |            |
-| 250row_1col_10m | :x:                | :x:                |                |            |
+|                 | builtin_upper      | udf_upper                              | builtin_length | udf_length |
+| --------------- | ------------------ | -------------------------------------- | -------------- | ---------- |
+| 200row_1col_10m | :white_check_mark: | :white_check_mark: (failed w/ pyspark) |                |            |
+| 250row_1col_10m | :x:                | :x:                                    |                |            |
 
 
 |                 | builtin_upper      | udf_upper | builtin_length | udf_length |
