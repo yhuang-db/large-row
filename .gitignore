@@ -170,3 +170,4 @@ data/dummy
 *.parquet
 output
 /.vscode
+/.metals
