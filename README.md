@@ -20,58 +20,52 @@ Generated data: ```large_string_100row_10col_10m.parquet```
 
 
 ### Test Jobs
-Test pyspark file: ```udf_upper.py```
+Test pyspark file: ```scala/src/main/scala/BuiltinUpper.scala```
 
-```Python
-spark = SparkSession.builder.appName("benchmark").getOrCreate()
+```Scala
+import org.apache.spark.sql.SparkSession
 
-def udf_upper(text):
-    return text.upper()
-spark.udf.register("udf_upper", udf_upper)
+object BuiltinUpper {
+  def main(args: Array[String]): Unit = {
+    // dataset
+    val file = s"data/${dataset}.parquet"
+    
+    // read parquet file
+    val spark = SparkSession.builder.appName("Builtin-Upper").getOrCreate()
+    val df = spark.read.parquet(file)
+    df.createOrReplaceTempView("T")
+    df.printSchema()
+    
+    // run sql and write to parquet
+    val sql_projection = df.columns.map(c => s"UPPER(${c}) as ${c}").mkString(", ")
+    val sql = s"SELECT ${sql_projection} FROM T"
+    val df_out = spark.sql(sql)
+    df_out.write.mode("overwrite").parquet("output/blt_upper.parquet")
+    spark.stop()
+  }
+}
 
-df = spark.read.parquet("large_string_100row_10col_10m.parquet")
-df.createOrReplaceTempView("T")
-df_upper = spark.sql("SELECT udf_upper(string_1) FROM T")
-df_upper.write.parquet("output.parquet")
-spark.stop()
 ```
 
 Test spark-submit commend line: according to https://github.com/dongjoon-hyun/spark/blob/master/.github/workflows/benchmark.yml
 ```sh
-../bin/spark-submit --driver-memory 6g udf_upper.py
+spark-3.5.3-bin-hadoop3-scala2.13/bin/spark-submit \
+  --class "BuiltinUpper" \
+  --master local[1] \
+  --driver-memory 6g \
+  target/scala-2.13/simple-project_2.13-1.0.jar large_string_100row_10col_10m
 ```
-
-### Test Result
-
-|                  | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
-| ---------------- | ------------------ | ------------------ | ------------------ | ------------------ |
-| 100row_10col_1m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 100row_10col_5m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 100row_10col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 100row_10col_20m | :x:                | :x:                | :white_check_mark: | :x:                |
-| 100row_10col_30m | :x:                | :x:                | :x:                | :x:                |
-
-|                 | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
-| --------------- | ------------------ | ------------------ | ------------------ | ------------------ |
-| 50row_1col_10m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 60row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
-| 70row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
-| 80row_1col_10m  | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 100row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 200row_1col_10m | :white_check_mark: | :x:                | :white_check_mark: | :x:                |
-| 250row_1col_10m | :x:                | :x:                | :x:                | :x:                |
-| 300row_1col_10m | :x:                | :x:                | :x:                | :x:                |
-
-|                 | builtin_upper      | udf_upper          | builtin_length     | udf_length         |
-| --------------- | ------------------ | ------------------ | ------------------ | ------------------ |
-| 1row_1col_100m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 1row_1col_250m  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| 1row_1col_500m  | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
-| 1row_1col_1000m | :x:                | :x:                | :white_check_mark: | :x:                |
 
 ---
 
-# 1122
+# Result
+
+|                  | builtin_upper      | udf_upper          | builtin_length | udf_length |
+| ---------------- | ------------------ | ------------------ | -------------- | ---------- |
+| 100row_10col_1m  | :white_check_mark: | :white_check_mark: |                |            |
+| 100row_10col_5m  | :x:                | :x:                |                |            |
+| 100row_10col_10m | :x:                | :x:                |                |            |
+
 
 |                 | builtin_upper      | udf_upper          | builtin_length | udf_length |
 | --------------- | ------------------ | ------------------ | -------------- | ---------- |
@@ -83,14 +77,6 @@ Test spark-submit commend line: according to https://github.com/dongjoon-hyun/sp
 | --------------- | ------------------ | ------------------ | -------------- | ---------- |
 | 200row_1col_10m | :white_check_mark: | :white_check_mark: |                |            |
 | 250row_1col_10m | :x:                | :x:                |                |            |
-
-##### Apply function on all columns
-
-|                  | builtin_upper      | udf_upper          | builtin_length | udf_length |
-| ---------------- | ------------------ | ------------------ | -------------- | ---------- |
-| 100row_10col_1m  | :white_check_mark: | :white_check_mark: |                |            |
-| 100row_10col_5m  | :x:                | :x:                |                |            |
-| 100row_10col_10m | :x:                | :x:                |                |            |
 
 
 |                 | builtin_upper      | udf_upper | builtin_length | udf_length |
